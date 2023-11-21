@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steppets menu</title>
+    <title>Steppets</title>
     <link rel="stylesheet" type="text/css" href="main menu.css">
 </head>
 
@@ -13,12 +13,12 @@
     <main>
 
         <div class="ig-profile">
-            <img class="pfp" src="../designs/images/无标题.png" alt="e">
+            <img class="pfp" src="../designs/images/lmao.png" alt="e">
             <h1 class="pfp-margin">Your profile</h1>
 
             <div class="size">
                 <p>Username [Lv. 0]</p>
-                <p class="margin-1">Steps: 0 <button class="button" id="stats-button"><p>View stats</p></button></p>
+                <p>Steps: 0 <button class="button" onclick="sfx()">View stats</button></p>
                 <div class="click-layer" id="click-layer"></div>
             </div>
 
@@ -30,21 +30,37 @@
         </div>
 
         <div class="daily-challenge">
-            <button id="challenge">Challenge</button>
-            <h1>Daily reward</h1>
-            <p>- Challenge</p>
-            <p>Reward</p>
 
-            <div>
-                <p>Progress: 0 / 0</p>
-                <button id="daily-button">Claim reward</button>
+            <div class="dropdown" data-dropdown>
+
+                <button data-dropdown-button class="challenge-button" onclick="sfx()">Challenge</button>
+                
+                <div class="dropdown-menu">
+
+                    <div class="c-toptext">
+                        <h1 class="color ssize">Daily reward</h1>
+                        <p>- Walk so many times you get so tired you die</p>
+                    </div>
+        
+                    <div class="c-midtext">
+                        <p>Progress: 0 / 177,310</p>
+                        <p class="color reward">Reward: Mike hunt</p>
+                    </div>
+
+                    <div class="c-bottomtext">
+                        <button id="daily-button" class="daily-button">Claim reward</button>
+                    </div>
+
+                </div>
             </div>
             
         </div>
 
         <div class="center">
-            <h1>Pet name</h1>
-            <h2>* * * * *</h2>
+            <div>
+                <h1>Pet name [Lv. 0]</h1>
+                <h2 class="pet-rarity">* * * * *</h2>
+            </div>
 
             <div>
                 <div class="left-button">
@@ -65,7 +81,6 @@
             </div>
 
             <div class="bottom-text">
-                <p>Level: 0</p>
                 <p>EXP: 0</p>
             </div>
 
@@ -73,11 +88,14 @@
 
         <div>
             <a href="" class="bottom-left">Leaderboards</a>
-            <a target="_blank" class="bottom-right" href="https://binbows02.github.io/Website/main_menu.html">Website (For now)</a>
+            <a target="_blank" class="bottom-right" href="https://binbows02.github.io/Website/main_menu.html"
+            onclick="sfx()">Website (For now)</a>
             <!--<a href="" class="bottom-right">Settings</a>-->
         </div>
 
     </main>
+
+    <script src="main menu.js"></script>
 
 </body>
 

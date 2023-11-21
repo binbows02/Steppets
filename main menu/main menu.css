@@ -23,6 +23,8 @@ body {
 }
 
 .pfp {
+    position: relative;
+    top: 2%;
     width: 100px;
     float: left;
     margin-right: 10px;
@@ -32,10 +34,6 @@ body {
 .pfp-margin {
     margin-top: -2px;
     font-size: 25px;
-}
-
-.margin-1 {
-    margin-top: -15px;
 }
 
 .size {
@@ -76,13 +74,21 @@ body {
 }
 
 .button {
+    font-family: GenshinFont;
+    color: white;
     display: inline-block;
     font-size: 15px;
-    margin-left: 50px;
+    margin-left: 80px;
     background-color: transparent;
     border: none;
     padding: 0;
     cursor: pointer;
+    text-decoration: underline;
+}
+
+.button:hover {
+    transition: 0.3s ease;
+    color: rgb(255, 222, 159)
 }
 
 .left-button {
@@ -130,4 +136,94 @@ body {
 .daily-challenge {
     position: absolute;
     bottom: 60%;
+}
+
+.pet-rarity {
+    text-shadow: -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
+    color: rgb(255, 218, 163);
+}
+
+.challenge-button {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: rgb(0, 0, 0) 2px solid;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    font-family: GenshinFont;
+    font-size: 15px;
+}
+
+.dropdown {
+    position: relative;
+    left: 0;
+    bottom: 210px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 350px;
+    background-color: rgba(114, 1, 1, 0.5);
+    border: rgb(255, 0, 0) 2px solid;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+.dropdown.active>.challenge-button+.dropdown-menu {
+    opacity: 1;
+}
+
+.c-toptext {
+    position: relative;
+    bottom: 15px;
+    left: 10px
+}
+
+.c-midtext {
+    position: relative;
+    left: 10px;
+    margin-top: 20px;
+}
+
+.c-bottomtext {
+    position: relative;
+    left: 10px;
+    bottom: 5px;
+}
+
+.daily-button {
+    display: inline-block;
+    background-color: rgba(82, 82, 82, 0.8);
+    border: rgb(24, 24, 24) 2px solid;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    font-family: GenshinFont;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.color {
+    color: rgb(255, 235, 124);
+}
+
+.reward {
+    position: relative;
+    padding: 5px;
+    right: 10px;
+    border: rgb(255, 235, 124) solid;
+    border-radius: 5px;
+}
+
+.ssize {
+    margin-top: 25px;
+    font-size: 30px;
 }
