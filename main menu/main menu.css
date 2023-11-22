@@ -13,7 +13,7 @@ body {
     background-image: url(../designs/images/bgempty.png);
     background-size: cover;
     background-position: center;
-    background-position-y: -150px;
+    background-position-y: -120px;
     background-repeat: no-repeat;
     background-color: rgba(111, 150, 204, 255);
 }
@@ -57,7 +57,7 @@ body {
 
 .character {
     position: relative;
-    width: 350px;
+    width: 275px;
     bottom: 20px;
 }
 
@@ -161,7 +161,7 @@ body {
 .dropdown {
     position: relative;
     left: 0;
-    bottom: 210px;
+    bottom: 140px;
 }
 
 .dropdown-menu {
