@@ -1,0 +1,162 @@
+@font-face {
+    font-family: GenshinFont;
+    src: url(../designs/fonts/zh-cn.ttf);
+}
+
+p {
+    font-family: GenshinFont;
+    color: white;
+}
+
+body {
+    background-image: url(../designs/images/bgempty.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    inset: 0;
+    background: black;
+    opacity: .35;
+}
+
+.pfps {
+    width: 120px;
+    border-radius: 60px;
+    float: left;
+    margin-right: 10px;
+}
+
+.title,
+.main_title {
+    text-align: center;
+    font-family: GenshinFont;
+    color: white;
+}
+
+.main_title {
+    font-size: 75px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.rank1 {
+    float: inline-end;
+    font-weight: bold;
+    font-size: large;
+    color: gold;
+}
+
+.rank {
+    float: inline-end;
+    font-weight: bold;
+    font-size: large;
+}
+
+.steps {
+    float: right;
+}
+
+.empty {
+    margin-bottom: 100px;
+}
+
+.center {
+    text-align: center;
+    margin-top: -15px;
+    font-size: x-small;
+}
+
+.link {
+    margin-top: 200px;
+    color: rgb(97, 104, 204);
+    font-weight: bold;
+    font-family: GenshinFont;
+    cursor: pointer;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.sub {
+    text-align: center;
+    margin-top: -20px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-family: GenshinFont;
+}
+
+.small {
+    width: 75px;
+    cursor: pointer;
+}
+
+.border {
+    font-family: GenshinFont;
+    text-align: center;
+    color: rgb(255, 237, 133);
+    border: 5px solid rgb(255, 237, 133);
+    padding: 15px;
+}
+
+.rcenter {
+    text-align: center;
+}
+
+.selection {
+    margin-top: 100px;
+    margin-bottom: -40px;
+}
+
+.colored-hyp {
+    color: rgb(210, 229, 255);
+    cursor: pointer;
+}
+
+.colored-hyp:hover {
+    color: rgb(255, 224, 138);
+    text-decoration: underline;
+}
+
+.uncolored-hyp {
+    color: rgb(211, 211, 211);
+    cursor: pointer;
+}
+
+.uncolored-hyp:hover {
+    color: rgb(255, 224, 138);
+    text-decoration: underline;
+}
+
+.own-profile {
+    position: relative;
+    top: 100px;
+    border: solid gold 3px;
+    background-color: rgb(255, 215, 0, 0.25);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.pos {
+    text-align: center;
+    position: relative;
+    top: 50px;
+}
+
+.own-profile .pfps {
+    position: relative;
+    top: 5px;
+    width: 150px;
+    border-radius: 75px;
+}
