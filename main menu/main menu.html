@@ -17,16 +17,11 @@
             <h1 class="pfp-margin">Your profile</h1>
 
             <div class="size">
-                <p>Username [Lv. 0]</p>
-                <p>Steps: 0 <button class="button" onclick="sfx()">View stats</button></p>
+                <p>@Username [Lv. 0]</p>
+                <p>Steps: 0 <button data-modal-target="#modal" class="button" onclick="sfx(); open_modal()">View stats</button></p>
                 <div class="click-layer" id="click-layer"></div>
             </div>
 
-        </div>
-
-        <div class="top-right">
-            <a href="">Model shop</a>
-            <a href="">Games</a>
         </div>
 
         <div class="daily-challenge">
@@ -35,7 +30,7 @@
 
                 <button data-dropdown-button class="challenge-button" onclick="sfx()">Challenge</button>
                 
-                <div class="dropdown-menu">
+                <div class=" dropdown-menu">
 
                     <div class="c-toptext">
                         <h1 class="color ssize">Daily reward</h1>
@@ -56,8 +51,13 @@
             
         </div>
 
+        <div class="top-right">
+            <a href="">Model shop</a>
+            <a href="">Games</a>
+        </div>
+
         <div class="center">
-            <div>
+            <div class="pet-info">
                 <h1>Pet name [Lv. 0]</h1>
                 <h2 class="pet-rarity">* * * * *</h2>
             </div>
@@ -92,6 +92,31 @@
             onclick="sfx()">Website (For now)</a>
             <!--<a href="" class="bottom-right">Settings</a>-->
         </div>
+
+        <div class="modal" id="modal">
+
+            <div class="modal-header">
+                <div class="modal-title"><h1>Your stats</h1></div>
+                <button data-close-button class="close-button" onclick="sfx()">&times;</button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="modal-profile">
+                    <img class="pfp" src="../designs/images/lmao.png" alt="pfp">
+                    <p>@Username [Lv. 0]</p>
+                    <p style="color: rgba(220, 220, 220, 0.658);">ID: 1</p>
+                </div>
+
+                <div class="modal-stats">
+                    <p>Steps: 0</p>
+                    <p>Coins: 0</p>
+                    <p>EXP: 0</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="blackoverlay"></div>
 
     </main>
 
