@@ -1,3 +1,14 @@
+let clicks = 0;
+let every10clicks = 0;
+
+let coins = 0;
+let exp = 0;
+
+let upgrade_pet = 10;
+let level = 1;
+
+let username = "Username";
+
 document.addEventListener('click', e => {
     const isDropdownButton = e.target.matches("[data-dropdown-button]");
     if (!isDropdownButton && e.target.closest('[data-dropdown]') !== null) {
@@ -66,3 +77,110 @@ function closeModal(modal) {
     modal.classList.remove('active')
     blackoverlay.classList.remove('active')
 }
+
+function SwitchCharacter() {
+
+    let char1 = '../designs/mp4/char 2.gif';
+    let char2 = '../designs/mp4/char.gif';
+
+    let displayImage = document.getElementById('char')
+    if (displayImage.src.match('../designs/mp4/char.gif')) {
+        displayImage.src = char1
+    }
+
+    else {
+        displayImage.src = char2
+    }
+}
+
+
+function click_button() {
+    clicks++;
+    every10clicks++;
+    exp += 5;
+    document.getElementById("clickscount").innerHTML = ('Steps: ' + clicks);
+    document.getElementById("modalclickscount").innerHTML = ('Steps: ' + clicks);
+    document.getElementById("coinscount").innerHTML = ('Coins: ' + coins);
+    document.getElementById("expcount").innerHTML = ('Exp: ' + exp);
+
+    if (every10clicks == 10) {
+        every10clicks = 0;
+        coins += 5;
+    }
+}
+
+let pet_exp = 0;
+
+function upgrade() {
+    if (coins >= upgrade_pet) {
+        coins -= upgrade_pet;
+        upgrade_pet += 10;
+        level++;
+        pet_exp += 1000;
+
+        let audio = new Audio("../designs/sounds/click.mp3");
+        audio.play();
+        document.getElementById("notenough").innerHTML = ('Pet upgraded to Lv. ' + level + '!');
+        document.getElementById("expcount_pet").innerHTML = ('Exp: ' + pet_exp);
+    }
+
+    else {
+        document.getElementById("notenough").innerHTML = ('You need ' + (upgrade_pet - coins) + ' more coins');
+    }
+
+    document.getElementById("level").innerHTML = ('Pet name [Lv. ' + level + ']');
+    document.getElementById("upgrade").innerHTML = ('Costs: ' + upgrade_pet);
+}
+
+let pfp = "../designs/images/harvey.jpg";
+
+let pfpImage = document.getElementById("pfp");
+let pfpImagemodal = document.getElementById("modalpfp");
+
+
+function display() {
+    document.getElementById("clickscount").innerHTML = ('Steps: ' + clicks);
+    document.getElementById("coinscount").innerHTML = ('Coins: ' + coins);
+    document.getElementById("expcount").innerHTML = ('Exp: ' + exp);
+    document.getElementById("level").innerHTML = ('Pet name [Lv. ' + level + ']');
+    document.getElementById("upgrade").innerHTML = ('Costs: ' + upgrade_pet);
+    document.getElementById("modaluserlevel").innerHTML = ('@' + username + ' [Lv. ' + userlevel + ']');
+    document.getElementById("userlevel").innerHTML = ('@' + username + ' [Lv. ' + userlevel + ']');
+    document.getElementById("userprogress").innerHTML = ('Next level: ' + exp + ' / ' + user_max);
+    pfpImage.src = pfp;
+    pfpImagemodal.src = pfp;
+}
+
+function display_notenough() {
+    document.getElementById("notenough").innerHTML = ('&nbsp');
+}
+
+function switch_char() {
+
+    let char = document.getElementById('char');
+
+    if (char.src.match('char.gif')) {
+        char.src = 'char 2.gif';
+    }
+
+    else {
+        char.src = 'char.gif';
+    }
+}
+
+let userlevel = 1;
+let user_max = 100;
+
+function upgrade_user() {
+
+    if (exp >= user_max) {
+        userlevel++;
+        user_max += 1500;
+        document.getElementById("modaluserlevel").innerHTML = ('@' + username + ' [Lv. ' + userlevel + ']');
+        document.getElementById("userlevel").innerHTML = ('@' + username + ' [Lv. ' + userlevel + ']');
+    }
+}
+
+setInterval(display, 500);
+setInterval(display_notenough, 2000)
+setInterval(upgrade_user, 2000)
