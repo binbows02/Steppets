@@ -13,12 +13,17 @@
     <main>
 
         <div class="ig-profile">
-            <img class="pfp" src="../designs/images/lmao.png" alt="e">
+            <img id="pfp" class="pfp" src="../designs/images/lmao.png" alt="e">
             <h1 class="pfp-margin">Your profile</h1>
 
             <div class="size">
-                <p>@Username [Lv. 0]</p>
-                <p>Steps: 0 <button data-modal-target="#modal" class="button" onclick="sfx(); open_modal()">View stats</button></p>
+                <p id="userlevel">@ [Lv. 0]</p>
+
+                <div class="nexteachother">
+                    <p id="clickscount">Steps: 0 </p>
+                    <button data-modal-target="#modal" class="button" onclick="sfx(); open_modal()">View stats</button>
+                </div>
+
                 <div class="click-layer" id="click-layer"></div>
             </div>
 
@@ -58,30 +63,33 @@
 
         <div class="center">
             <div class="pet-info">
-                <h1>Pet name [Lv. 0]</h1>
-                <h2 class="pet-rarity">* * * * *</h2>
+                <h1 id="level">Pet name [Lv. 1]</h1>
+                <h2 id="pet-rarity" class="pet-rarity">* * * * *</h2>
             </div>
 
             <div>
-                <div class="left-button">
-                    <button>Previous</button>
+                <div>
+                    <button class="left-button" onclick="SwitchCharacter(), sfx()">
+                        <img class="small_arrow" src="../designs/images/left-arrow.png" alt=""></button>
                 </div>
 
                 <div>
                     <img
                         class="character"
+                        id="char"
                         src="../designs/mp4/char.gif"
                         alt="Character GIF">
                 </div>
                 
-                <div class="right-button">
-                    <button>next</button>
+                <div>
+                    <button class="right-button" onclick="SwitchCharacter(), sfx()">
+                        <img class="small_arrow" src="../designs/images/right-arrow.png" alt="rightarrow"></button>
                 </div>
 
             </div>
 
             <div class="bottom-text">
-                <p>EXP: 0</p>
+                <p id="expcount_pet">Exp: 0</p>
             </div>
 
         </div>
@@ -103,18 +111,38 @@
             <div class="modal-body">
 
                 <div class="modal-profile">
-                    <img class="pfp" src="../designs/images/lmao.png" alt="pfp">
-                    <p>@Username [Lv. 0]</p>
-                    <p style="color: rgba(220, 220, 220, 0.658);">ID: 1</p>
+                    <img class="pfp" id="modalpfp" src="../designs/images/lmao.png" alt="pfp">
+                    <p id="modaluserlevel">@ [Lv. 1]</p>
+                    <p class="userprogress" id="userprogress">Next level: 0 / 0</p>
+                    <p style="color: rgba(220, 220, 220, 0.658);" id="userid">ID: 1</p>
                 </div>
 
                 <div class="modal-stats">
-                    <p>Steps: 0</p>
-                    <p>Coins: 0</p>
-                    <p>EXP: 0</p>
+                    <p id="modalclickscount">Steps: 0</p>
+                    <p id="coinscount">Coins: 0</p>
+                    <p id="expcount">Exp: 0</p>
                 </div>
             </div>
         </div>
+
+        <!--TESTING PURPOSES ONLY!111!-->
+
+        <div class="testing">
+            <p>Testing purposes only :]</p>
+            <div>
+                <button onclick="click_button()"><p>klik for step</p></button>
+            </div>
+
+            <div>
+                <p id="upgrade">Costs: 0</p>
+
+                <button onclick="upgrade()"><p>Upgrade</p></button>
+
+                <p id="notenough">&nbsp</p>
+            </div>
+        </div>
+
+        <!--TESTING PURPOSES ONLY!111!-->
 
         <div id="blackoverlay"></div>
 

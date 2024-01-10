@@ -24,11 +24,12 @@ body {
 
 .pfp {
     position: relative;
-    top: 2%;
     width: 100px;
+    height: 100px;
     float: left;
-    margin-right: 10px;
-    border-radius: 10px;
+    margin-right: 5px;
+    border-radius: 12px;
+    object-fit: cover;
 }
 
 .pfp-margin {
@@ -83,13 +84,23 @@ body {
 .left-button {
     position: absolute;
     right: 360px;
-    bottom: 47%;
+    bottom: 300px;
+    cursor: pointer;
+    border: solid black 5px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.679);
+    padding: 5px;
 }
 
 .right-button {
     position: absolute;
     left: 360px;
-    top: 50%;
+    bottom: 300px;
+    cursor: pointer;
+    border: solid black 5px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.679);
+    padding: 5px;
 }
 
 .bottom-text {
@@ -299,7 +310,27 @@ body {
     pointer-events: all;
 }
 
+.small_arrow {
+    width: 50px;
+}
 
+.testing {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 20px;
+}
+
+.nexteachother {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: -15px;
+}
+
+.userprogress {
+    font-size: 12px;
+    color: silver;
+}
 
 
 
@@ -329,9 +360,11 @@ body {
         position: relative;
         top: 2%;
         width: 75px;
+        height: 75px;
         float: left;
         margin-right: 5px;
         border-radius: 12px;
+        object-fit: cover;
     }
 
     .pfp-margin {
@@ -403,14 +436,24 @@ body {
 
     .left-button {
         position: absolute;
-        right: 150px;
+        right: 270px;
         bottom: 47%;
+        cursor: pointer;
+        border: solid black 3px;
+        border-radius: 50px;
+        background-color: rgba(255, 255, 255, 0.679);
+        padding: 5px;
     }
 
     .right-button {
         position: absolute;
-        left: 150px;
+        left: 270px;
         top: 48%;
+        cursor: pointer;
+        border: solid black 3px;
+        border-radius: 50px;
+        background-color: rgba(255, 255, 255, 0.679);
+        padding: 5px;
     }
 
     .bottom-text {
@@ -610,5 +653,9 @@ body {
     #blackoverlay.active {
         opacity: 1;
         pointer-events: all;
+    }
+
+    .small_arrow {
+        width: 20px;
     }
 }
