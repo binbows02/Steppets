@@ -7,7 +7,13 @@ let exp = 0;
 let upgrade_pet = 10;
 let level = 1;
 
-let username = "Username";
+let username = "ok";
+
+let char1 = '../designs/mp4/char 2.gif';
+let char2 = '../designs/mp4/char.gif';
+let displayImage = document.getElementById('char');
+
+let pfp = "../designs/images/lol.jpg";
 
 document.addEventListener('click', e => {
     const isDropdownButton = e.target.matches("[data-dropdown-button]");
@@ -43,7 +49,7 @@ function sfx() {
     let audio = new Audio("../designs/sounds/click.mp3");
     audio.play();
 
-    cursor = pointer;
+    document.body.style.cursor = "pointer";
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -80,16 +86,16 @@ function closeModal(modal) {
 
 function SwitchCharacter() {
 
-    let char1 = '../designs/mp4/char 2.gif';
-    let char2 = '../designs/mp4/char.gif';
-
-    let displayImage = document.getElementById('char')
     if (displayImage.src.match('../designs/mp4/char.gif')) {
-        displayImage.src = char1
+        displayImage.src = char1;
+        document.getElementById("level").innerHTML = ('Character 2 [Lv. ' + level + ']');
+        document.getElementById("pet-rarity").innerHTML = ('* * * * *');
     }
 
     else {
-        displayImage.src = char2
+        displayImage.src = char2;
+        document.getElementById("level").innerHTML = ('Character 1 [Lv. ' + level + ']');
+        document.getElementById("pet-rarity").innerHTML = ('* * * *');
     }
 }
 
@@ -132,8 +138,6 @@ function upgrade() {
     document.getElementById("upgrade").innerHTML = ('Costs: ' + upgrade_pet);
 }
 
-let pfp = "../designs/images/harvey.jpg";
-
 let pfpImage = document.getElementById("pfp");
 let pfpImagemodal = document.getElementById("modalpfp");
 
@@ -142,30 +146,18 @@ function display() {
     document.getElementById("clickscount").innerHTML = ('Steps: ' + clicks);
     document.getElementById("coinscount").innerHTML = ('Coins: ' + coins);
     document.getElementById("expcount").innerHTML = ('Exp: ' + exp);
-    document.getElementById("level").innerHTML = ('Pet name [Lv. ' + level + ']');
     document.getElementById("upgrade").innerHTML = ('Costs: ' + upgrade_pet);
     document.getElementById("modaluserlevel").innerHTML = ('@' + username + ' [Lv. ' + userlevel + ']');
     document.getElementById("userlevel").innerHTML = ('@' + username + ' [Lv. ' + userlevel + ']');
     document.getElementById("userprogress").innerHTML = ('Next level: ' + exp + ' / ' + user_max);
     pfpImage.src = pfp;
     pfpImagemodal.src = pfp;
+
+    document.getElementById('rank').innerHTML = ('#69');
 }
 
 function display_notenough() {
     document.getElementById("notenough").innerHTML = ('&nbsp');
-}
-
-function switch_char() {
-
-    let char = document.getElementById('char');
-
-    if (char.src.match('char.gif')) {
-        char.src = 'char 2.gif';
-    }
-
-    else {
-        char.src = 'char.gif';
-    }
 }
 
 let userlevel = 1;
