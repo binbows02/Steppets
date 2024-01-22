@@ -134,7 +134,7 @@ function upgrade() {
         document.getElementById("notenough").innerHTML = ('You need ' + (upgrade_pet - coins) + ' more coins');
     }
 
-    document.getElementById("level").innerHTML = ('Pet name [Lv. ' + level + ']');
+    document.getElementById("level").innerHTML = ('Character 1 [Lv. ' + level + ']');
     document.getElementById("upgrade").innerHTML = ('Costs: ' + upgrade_pet);
 }
 

@@ -17,14 +17,17 @@ function sfx() {
 }
 
 let players = [
-    { pfp: "../designs/images/default-noimage.jpg", username: 'user1', pet: 'Unknown', coins: 0, steps: 0, exp: 0 },
+    { pfp: "../designs/images/default-noimage.jpg", username: 'user1', pet: 'Unknown', coins: 1000, steps: 0, exp: 0 },
     { pfp: "../designs/images/default-noimage.jpg", username: 'user2', pet: 'Unknown', coins: 0, steps: 0, exp: 0 },
     { pfp: "../designs/images/default-noimage.jpg", username: 'user3', pet: 'Unknown', coins: 0, steps: 0, exp: 0 },
     { pfp: "../designs/images/default-noimage.jpg", username: 'user4', pet: 'Unknown', coins: 0, steps: 0, exp: 0 },
-    { pfp: "../designs/images/default-noimage.jpg", username: 'user5', pet: 'Unknown', coins: 0, steps: 0, exp: 0 }
+    { pfp: "../designs/images/default-noimage.jpg", username: 'user5', pet: 'Unknown', coins: 1, steps: 0, exp: 0 }
 ];
 
 function displayPlayer(index) {
+
+    players.sort((a, b) => b.coins - a.coins);
+
     let player = players[index];
     document.getElementById(`username${index + 1}`).innerHTML = `@${player.username}`;
     document.getElementById(`pet${index + 1}`).innerHTML = `Active pet: ${player.pet}`;
@@ -34,15 +37,9 @@ function displayPlayer(index) {
     document.getElementById(`pfp${index + 1}`).src = player.pfp;
 }
 
-displayPlayer(0);
-displayPlayer(1); 
-displayPlayer(2); 
-displayPlayer(3); 
-displayPlayer(4); 
-
 function displayOwn() {
     let own_stats = [
-        { pfp: "../designs/images/lmao.png", username: 'Username', pet: 'Unknown', coins: 0, steps: 0, exp: 0, rank: '100' }  
+        { pfp: "../designs/images/lmao.png", username: 'Username', pet: 'Unknown', coins: 0, steps: 0, exp: 0, rank: '100' }
     ];
 
     document.getElementById("rank").innerHTML = ('#' + own_stats[0].rank);
@@ -56,5 +53,10 @@ function displayOwn() {
     pfp.src = own_stats[0].pfp;
 }
 
+displayPlayer(0);
+displayPlayer(1);
+displayPlayer(2);
+displayPlayer(3);
+displayPlayer(4);
 
 displayOwn();
